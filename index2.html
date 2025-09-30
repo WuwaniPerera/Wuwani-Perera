@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wuwani Perera | Portfolio</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* New Starry Background Animation */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .star-layer-1,
+    .star-layer-2,
+    .star-layer-3 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .star {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: twinkle 2ms infinite alternate;
+    }
+
+    .star-layer-1 .star {
+      width: 5px;
+      height: 5px;
+      animation-duration: 2s;
+    }
+
+    .star-layer-2 .star {
+      width: 6px;
+      height: 4px;
+      animation-duration: 4s;
+    }
+
+    .star-layer-3 .star {
+      width: 8px;
+      height: 8px;
+      animation-duration: 5s;
+    }
+
+    @keyframes twinkle {
+      0% {
+        opacity: 0.2;
+      }
+
+      50% {
+        opacity: 0.9;
+      }
+
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    /* Fade-in animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Home Section */
+    #home {
+      background: transparent;
+      color: #fff;
+      text-align: center;
+      padding: 140px 20px 60px 20px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #home img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #FFB84C;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+      margin-top: -130px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    #home h1 {
+      font-size: 3rem;
+      color: #00C4FF;
+      text-shadow: 0 0 10px #00C4FF, 0 0 20px #00C4FF, 0 0 30px #00C4FF;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 5px #00C4FF, 0 0 10px #00C4FF, 0 0 15px #00C4FF;
+      }
+
+      to {
+        text-shadow: 0 0 10px #00C4FF, 0 0 20px #00C4FF, 0 0 30px #00C4FF;
+      }
+    }
+
+    #home p {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ccc;
+      font-family: Segoe UI Black;
+    }
+
+    /* Home Buttons */
+    #home .social-buttons {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    #home .social-buttons a {
+      width: 45px;
+      height: 45px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 184, 76, 0.1);
+      color: #fff;
+      font-size: 1.2rem;
+      border: 2px solid #FFB84C;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    #home .social-buttons a:hover {
+      background: #FFB84C;
+      color: #000;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
+    }
+
+    /* Elegant CV Button */
+    #home .btn-cv {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: 2px solid #FFB84C;
+      background: transparent;
+      color: #FFB84C;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-5px);
+      }
+
+      60% {
+        transform: translateY(-2px);
+      }
+    }
+
+    #home .btn-cv:hover {
+      background: #FFB84C;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
+    }
+
+    /* Navbar */
+    nav.navbar {
+      transition: all 0.3s ease;
+      padding: 12px 0;
+      font-weight: 500;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav a.nav-link {
+      margin: 0 12px;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+      color: #fff !important;
+    }
+
+    nav a.nav-link::after {
+      content: '';
+      display: block;
+      height: 2px;
+      background: #FFB84C;
+      width: 0;
+      transition: width 0.3s;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+    }
+
+    nav a.nav-link:hover::after,
+    nav a.nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #FFB84C !important;
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+
+    .navbar-nav {
+      margin-left: auto;
+    }
+
+    /* Sections */
+    section {
+      padding: 60px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #FFB84C;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Card */
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+      background: rgba(34, 34, 34, 0.8);
+      color: #fff;
+      border: none;
+    }
+
+    .icon {
+      color: #FFB84C;
+      margin-right: 8px;
+    }
+
+    /* About Me Section */
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .about-text {
+      text-align: left;
+      line-height: 1.6;
+    }
+
+    .about-text p {
+      text-align: center;
+      color: #ccc;
+      font-size: 1.1rem;
+    }
+
+    .about-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .about-card {
+      flex: 0 0 170px;
+      background: rgba(34, 34, 34, 0.8);
+      border-radius: 10px;
+      color: #fff;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about-card h3 {
+      font-size: 1.9rem;
+      color: #FFB84C;
+      margin-bottom: 5px;
+    }
+
+    .about-card p {
+      font-size: 0.9rem;
+      color: #ccc;
+      margin: 0;
+    }
+
+    .counter-top {
+      color: #FFB84C;
+    }
+
+    .counter-bottom {
+      color: #FFB84C;
+    }
+
+    /* Experience Timeline */
+    .timeline {
+      position: relative;
+      margin: 40px auto;
+      padding-left: 30px;
+      border-left: 2px solid #FFB84C;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+      animation: fadeInLeft 1s ease-out;
+    }
+
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -11px;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background: #FFB84C;
+      border-radius: 50%;
+      border: 2px solid #111;
+    }
+
+    .timeline-content {
+      margin-left: 30px;
+      background: rgba(34, 34, 34, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .timeline-content h6 {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-family: Arial Black;
+      font-size: 18px;
+    }
+
+    .timeline-location {
+      margin: 5px 0;
+      color: #FFB84C;
+      font-family: Cascadia Code SemiBold;
+    }
+
+    .timeline-content p {
+      margin: 5px 0;
+      color: #ccc;
+      font-family: Bierstadt;
+    }
+
+    .timeline-date {
+      float: right;
+      font-size: 0.85rem;
+      background: #333;
+      color: #FFB84C;
+      padding: 3px 10px;
+      border-radius: 15px;
+      margin-top: -25px;
+      font-family: Cascadia Code SemiBold;
+    }
+
+    /* Education Section Styles */
+    #education {
+      padding: 60px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    #education h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+      color: #FFB84C;
+      animation: slideIn 1s ease-out;
+    }
+
+    #education .card {
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      background: rgba(34, 34, 34, 0.8);
+      border: none;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .education-location {
+      margin: 5px 0;
+      color: #FFA500;
+      /* Updated to orange */
+      font-family: Cascadia Code SemiBold;
+    }
+
+    #education .card:hover {
+      box-shadow: 0 6px 15px rgba(255, 184, 76, 0.1);
+      transform: translateY(-5px);
+    }
+
+    #education .card .me-4 i {
+      color: #FFB84C;
+      font-size: 2rem;
+    }
+
+    #education .card h5 {
+      font-size: 1.25rem;
+      margin-bottom: 5px;
+      color: #fff;
+      font-family: Arial Black;
+      font-size: 18px;
+    }
+
+    card p {
+
+      color: #ccc;
+      font-family: Bierstadt;
+    }
+
+    #education .card p em {
+      font-style: italic;
+      color: #FFB84C;
+    }
+
+    #education .card p strong {
+      color: #ccc;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Publication Section */
+    #publications .btn-publication {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    #publications .btn-publication .btn-cv {
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+      border: 2px solid #FFB84C;
+      background: transparent;
+      color: #FFB84C;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    #publications .btn-publication .btn-cv:hover {
+      background: #FFB84C;
+      color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(255, 184, 76, 0.4);
+    }
+
+    /* Skills Section */
+    .skills {
+      padding: 80px 10%;
+      background: transparent;
+      text-align: center;
+    }
+
+    .skills h2 {
+      font-weight: bold;
+      color: #FFB84C;
+      margin-bottom: 10px;
+    }
+
+    .skills p {
+      color: #ffb84d;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .skills-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .tab-button {
+      padding: 6px 18px;
+      border-radius: 20px;
+      background: #333;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s;
+      animation: slideIn 1s ease-out;
+    }
+
+    .tab-button.active {
+      background: #FFB84C;
+      color: #000;
+    }
+
+    .tab-button:hover {
+      background: #FFB84C;
+      color: #000;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 2fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: rgba(26, 26, 26, 0.8);
+      border-radius: 10px;
+      padding: 35px;
+      text-align: center;
+      transition: transform 0.3s background 0.3s;
+      animation: zoomIn 1s ease-out;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .skill-card img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 10px;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: rgba(34, 34, 34, 0.8);
+    }
+
+    .skill-card span {
+      display: block;
+      margin-top: 5px;
+      font-weight: 500;
+    }
+
+    .skill-type {
+      font-size: 0.8rem;
+      color: #ccc;
+    }
+
+    /* Projects */
+    #projects {
+      background: transparent;
+      padding: 60px 20px;
+      margin: 20px 0;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #projects h2 {
+      color: #FFB84C;
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+    }
+
+    .project-card {
+      background: rgba(26, 26, 26, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      border-bottom: 2px solid #FFB84C;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      background: rgba(34, 34, 34, 0.8);
+    }
+
+    .project-card strong {
+      display: block;
+      margin-bottom: 10px;
+      color: #FFB84C;
+    }
+
+    .project-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+
+    .project-card .tech-stack {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-card .tech-stack span {
+      background: #333;
+      color: #FFB84C;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 0.8rem;
+    }
+
+    /* Contact Section */
+    #contact {
+      padding: 60px 20px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+
+    #contact h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      font-weight: bold;
+      color: #FFB84C;
+      animation: slideIn 1s ease-out;
+    }
+
+    .contact-card {
+      border: 2px solid #FFA500;
+      background: rgba(26, 26, 26, 0.8);
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      max-width: 450px;
+      margin: 0 auto;
+    }
+
+    .contact-card .contact-icon {
+      margin-bottom: 5px;
+    }
+
+    .contact-card .contact-icon i {
+      color: #FFB84C;
+      font-size: 2rem;
+    }
+
+    .contact-card .first-child p {
+      margin: 10px 0;
+      color: #A7A7A7;
+      opacity: 0.7;
+      margin-bottom: 40px;
+    }
+
+    .contact-card p {
+      margin-top: 5px;
+    }
+
+    .contact-card a {
+      color: #ffd700;
+      text-decoration: none;
+    }
+
+    .contact-card a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* Footer */
+    footer {
+      background: #000;
+      color: #FFB84C;
+      padding: 10px 0;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-cards {
+        flex-direction: column;
+      }
+
+      .about-card {
+        flex: 1 1 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (min-width: 0px) {
+      .stars .star {
+        width: 2px;
+        height: 2px;
+      }
+    }
+
+    @media (min-width: 600px) {
+      .stars .star {
+        width: 3px;
+        height: 3px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      .stars .star {
+        width: 4px;
+        height: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Starry Background -->
+  <div class="stars">
+    <div class="star-layer-1"></div>
+    <div class="star-layer-2"></div>
+    <div class="star-layer-3"></div>
+    <script>
+      function createMovingStars(layerClass, count, size, speed) {
+        const layer = document.querySelector(`.${layerClass}`);
+        for (let i = 0; i < count; i++) {
+          const star = document.createElement('div');
+          star.className = 'star';
+          star.style.width = `${size}px`;
+          star.style.height = `${size}px`;
+          star.style.left = `${Math.random() * 100}vw`;
+          star.style.top = `${Math.random() * 100}vh`;
+          star.style.animation = `moveStars ${speed}s linear infinite, twinkle ${4 + Math.random() * 2}s infinite alternate`;
+          layer.appendChild(star);
+        }
+      }
+      createMovingStars('star-layer-1', 60, 3, 25);
+      createMovingStars('star-layer-2', 40, 6, 35);
+      createMovingStars('star-layer-3', 20, 8, 45);
+
+      // Additional styles for moving stars
+      const styleSheet = document.createElement('style');
+      styleSheet.innerHTML = `
+        @keyframes moveStars {
+          0% { transform: translateY(0) translateX(0); }
+          100% { transform: translateY(-100vh) translateX(${Math.random() * 20 - 10}vw); }
+        }
+        .star-layer-1 .star, .star-layer-2 .star, .star-layer-3 .star {
+          animation-name: moveStars, twinkle;
+          animation-iteration-count: infinite;
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    </script>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Wuwani Perera</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#profile">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Project</a></li>
+          <li class="nav-item"><a class="nav-link" href="#publications">Publication</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="fade-in">
+    <div class="text-center">
+      <img src="wuwani.jpeg">
+      <p>Data Science Graduate | Junior Data & ERP System Analyst | Aspiring Business Analytics Professional</p>
+      <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/wuwani-chathurya/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:wuwani2001@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+      <a href="Wuwani-Perera-CV.pdf" class="btn-cv" download>
+        <i class="fas fa-download"></i> Download CV
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="profile" class="fade-in">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <div class="about-text">
+        <p>
+          I am a Data Science graduate and Junior Data & ERP System Analyst with a strong background in <b> data
+            analytics, business intelligence, and enterprise systems.</b> My professional journey spans developing
+          real-time dashboards, automating KPI reporting, managing ERP implementations, and applying statistical and
+          machine learning techniques to uncover insights that drive business performance.
+          Skilled in <b> Power BI, Grafana, Tableau, SQL, Python, and ERP systems </b>, I focus on transforming complex
+          datasets into actionable intelligence that supports strategic decision-making and operational efficiency. By
+          working closely with cross-functional teams across finance, operations, and IT, I have developed the ability
+          to bridge technical expertise with business requirements to deliver impactful solutions.</br>
+          <br>
+          I am passionate about using <b> advanced analytics and data-driven strategies </b> to solve complex business
+          problems, enhance decision-making, and enable digital transformation. As I prepare to pursue a Master of
+          Business Analytics in Australia, I aim to further strengthen my expertise in predictive analytics, data
+          strategy, and business innovation to create meaningful impact in global business environments.
+        </p>
+      </div>
+      <div class="about-cards">
+        <div class="about-card">
+          <h3><span class="counter counter-top" data-target="2">0</span>+</h3>
+          <p><b>Years Of Experience</b></p>
+        </div>
+        <div class="about-card">
+          <h3><span class="counter counter-bottom" data-target="15">0</span>+</h3>
+          <p><b>Technologies</b></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updated Experience Timeline -->
+  <section id="experience" class="fade-in">
+    <h2>Experience Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h6>Junior Data & ERP System Analyst</h6>
+          <span class="timeline-date">Jul 2025 – Present</span>
+          <div class="timeline-location">
+            <h7>Link Natural Products (PVT) LTD</h7>
+          </div>
+          <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
+            <li>Gather and analyze business requirements and develop solution estimates, ensuring ERP and data solutions
+              align with organizational goals.</li>
+            <li>Design and document technical workflows, data models, and deployment strategies to support process
+              optimization and informed decision-making.</li>
+            <li>Develop ad-hoc reports, dashboards, and statistical analyses to identify trends, evaluate business
+              performance, and provide actionable insights for strategic planning.</li>
+            <li>Collaborate with cross-functional teams (finance, operations, supply chain, and IT) to translate
+              business needs into data-driven ERP solutions.</li>
+            <li>Identify process and system inefficiencies, propose improvements, and document findings to enhance
+              operational workflows and data-driven decision support.</li>
+            <li>Conduct quality assurance, including testing and validation of ERP system functionalities, to ensure
+              data accuracy and system reliability.</li>
+            <li>Oversee ERP system implementation, configuration, integration, and maintenance, ensuring seamless
+              alignment with business processes.</li>
+            <li>Manage data migrations and ensure consistency, integrity, and compliance with data governance and
+              security standards.</li>
+            <li>Provide training, user documentation, and ongoing support to enhance ERP adoption and business users’
+              ability to leverage system insights.</li>
+            <li>Monitor ERP and reporting performance, conduct audits on data accuracy, and recommend improvements for
+              efficiency and business analytics capabilities.</li>
+            <li>Coordinate with vendors, developers, and stakeholders to deliver ERP-related projects (upgrades,
+              integrations, and enhancements) within set timelines and budgets.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h6>Data Analyst</h6>
+          <span class="timeline-date">Jan 2025 – Jun 2025</span>
+          <div class="timeline-location">
+            <h7>Colour Max Lanka (Pvt) Ltd</h7>
+          </div>
+          <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
+            <li>Collected, cleaned, and transformed raw data from multiple business units to ensure accuracy and
+              readiness for analysis.</li>
+            <li>Conducted exploratory data analysis (EDA) to uncover hidden trends, correlations, and outliers in sales
+              and operational data.</li>
+            <li>Designed interactive dashboards and automated reporting systems using BI tools, reducing manual
+              reporting time and improving accessibility.</li>
+            <li>Created forecasting models to predict sales performance and resource needs, supporting data-driven
+              planning.</li>
+            <li>Provided monthly and ad-hoc analytical reports to senior management, directly influencing marketing
+              campaigns, pricing strategies, and operational improvements.</li>
+            <li>Partnered with cross-functional teams (sales, finance, operations) to understand business needs and
+              deliver tailored analytics solutions.</li>
+            <li>Measured and monitored KPIs, including sales growth, customer retention, and operational efficiency, to
+              guide strategic decision-making.</li>
+            <li>Developed visualizations and presentations that simplified complex datasets, enabling non-technical
+              stakeholders to quickly grasp insights.</li>
+            <li>Applied statistical methods (trend analysis, hypothesis testing, correlation analysis) to validate
+              business assumptions and support strategic initiatives.</li>
+            <li>Recommended process improvements and efficiency gains by identifying gaps in data workflows and
+              reporting structures.</li>
+            <li>Ensured compliance with data governance standards by maintaining data integrity, security, and
+              confidentiality across reports and dashboards.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h6>Internship – Product & Service Innovation</h6>
+          <span class="timeline-date">Mar 2023 – Sep 2023</span>
+          <div class="timeline-location">
+            <h7>Dialog Axiata PLC</h7>
+          </div>
+          <ul style="color: #ccc; padding-left: 40px; margin-top: 10px;">
+            <li>Built and maintained real-time dashboards using Grafana and Power BI, enabling management to monitor
+              KPIs and performance metrics more effectively.</li>
+            <li>Performed data cleansing, preprocessing, and validation to ensure accuracy, consistency, and reliability
+              across large and diverse datasets.</li>
+            <li>Conducted consumer and market data analysis to support research, product innovation, and strategic
+              decision-making.</li>
+            <li>Contributed to the development of the Govimithuru chatbot for Sri Lanka’s agricultural sector, improving
+              digital access to agricultural knowledge.</li>
+            <li>Assisted in AWS cloud deployment and supported machine learning model training, enhancing chatbot
+              conversational performance and scalability.</li>
+            <li>Collaborated with cross-functional innovation teams to design and implement data-driven solutions for
+              emerging business and customer needs.</li>
+            <li>Documented processes, insights, and technical findings to support knowledge sharing and future product
+              development initiatives.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="fade-in">
+    <h2>Education</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-10">
+        <div class="card p-4 d-flex flex-row align-items-center">
+          <div class="me-4">
+            <i class="fas fa-graduation-cap" style="color:#FFB84C;"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">B.Sc (Hons) in Information Technology Specialized in Data Science</h5>
+            <div class="education-location">
+              <p>Sri Lanka Institute of Information Technology (SLIIT), Sri Lanka | 2021-2024</p>
+            </div><br>
+            <p class="mb-0" font-color="#ccc"><strong>GPA</strong> | 3.0<br><strong>Courswork</strong> | Data
+              Warehousing, Business
+              Intelligence, Data Analytics, Data Visualization, Machine Learning, Big Data Analytics, IoT, Cloud
+              Computing, Statistical Modelling</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="card p-4 d-flex flex-row align-items-center">
+          <div class="me-4">
+            <i class="fas fa-book-open" style="color:#FFB84C;"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">G.C.E. Advanced Level | Physical Science Stream - Mathematics</h5>
+            <div class="education-location">
+              <p>Vishaka Girls' School, Sri Lanka | 2020</p><br>
+            </div>
+            <p class="mb-0"><strong>Results</strong> | 2C s' & 1S</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
+        <div class="card p-4 d-flex flex-row align-items-center">
+          <div class="me-4">
+            <i class="fas fa-school" style="color:#FFB84C;"></i>
+          </div>
+          <div>
+            <h5 class="mb-1">G.C.E. Ordinary Level</h5>
+            <div class="education-location">
+              <p>Vishaka Girls' School, Sri Lanka | 2017</p><br>
+            </div>
+            <p class="mb-0"><strong>Results</strong> | 8A s' & 1B</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="fade-in">
+    <h2>Projects</h2>
+    <p class="text-center" style="color: #fff;">Showcasing my capabilities through a diverse collection of projects.</p>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="project-card">
+          <img
+            src="https://c8.alamy.com/comp/D1HRNR/last-weekend-before-christmas-shoppers-form-long-queues-at-waitrose-D1HRNR.jpg">
+          <strong>Final Year Research – Dynamic Queue Management System</strong>
+          <p>Developed an IoT and CCTV-based queue monitoring system with real-time item counting. Applied machine
+            learning algorithms to optimize customer distribution in high-traffic supermarkets.</p>
+          <div class="tech-stack">
+            <span>IoT</span>
+            <span>Python</span>
+            <span>TensorFlow</span>
+            <span>GitHub</span>
+            <span>AWS</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="image2.jpg">
+          <strong>Data Warehouse and Business Intelligence Project</strong>
+          <p>Designed and implemented a Power BI dashboard to provide actionable business intelligence for management
+            decision-making. Developed data models and interactive visualizations to track key performance indicators
+            and business trends.</p>
+          <div class="tech-stack">
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.XWULrM_JMPi8ATGD1g7rTwHaE7?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <strong>Internet of Things (IoT) – Smart Home System</strong>
+          <p>Built a temperature and humidity monitoring system with predictive analytics. Designed a real-time
+            dashboard using Node-RED and applied ARIMA forecasting.</p>
+          <div class="tech-stack">
+            <span>Arduino</span>
+            <span>Node-RED</span>
+            <span>Python</span>
+            <span>Machine Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.IPUJzzTjDOUTFjc47XbC9QHaEK?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <strong>Real-time Grafana Dashboard for Fuel Data Analysis</strong>
+          <p>Created a real-time Grafana dashboard to monitor fuel sensor data across multiple sites. Integrated MySQL
+            databases with Grafana for dynamic visualization and performance tracking.</p>
+          <div class="tech-stack">
+            <span>Grafana</span>
+            <span>MySQL</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="https://tse3.mm.bing.net/th/id/OIP.gUA-KAerNOHu9EOGWXAukwHaEN?rs=1&pid=ImgDetMain&o=7&rm=3">
+          <strong>Personalized Movie Recommendation Engine</strong>
+          <p>Implemented content-based and collaborative filtering for personalized recommendations. Built an
+            interactive interface with Streamlit for enhanced user experience.</p>
+          <div class="tech-stack">
+            <span>Jupyter Notebook</span>
+            <span>Streamlit</span>
+            <span>Machine Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="image.png">
+          <strong>Mobile Phone Shop Management System</strong>
+          <p>Developed a web-based application is a mobile phone shop management system developed to automate the
+            business process of a mobile phone shop and improve the productivity, efficiency, security and accuracy in
+            business-related tasks.</p>
+          <div class="tech-stack">
+            <span>MERN stack</span>
+            <span>MongoDB</span>
+            <span>Postman</span>
+            <span>GitHub</span>
+            <span>Figma</span>
+            <span>VS Code</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="picture.png">
+          <strong>Mobile Application Development</strong>
+          <p>Developed mobile application with a diary to write the day, a goal manager to manage and keep track of
+            goals, a mood tracker and a health tracker which comes with a BMI calculator and an exercise time tracker.
+          </p>
+          <div class="tech-stack">
+            <span>Flutter</span>
+            <span>Firebase</span>
+            <span>GitHub</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-card">
+          <img src="image1.jpeg">
+          <strong>Sales Data Analysis Dashboard</strong>
+          <p>Developed dashboard to provide interactive insights into sales performance, trends, and key metrics—helping
+            to drive data-driven decisions with clarity and confidence.</p>
+          <div class="tech-stack">
+            <span>Power BI</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="fade-in">
+    <h2>Publications</h2>
+    <p class="text-center">“Dynamic Queue Management System for Multi-Cashier Supermarkets Using IoT and Real-Time
+      Monitoring,” ICAC 2024.</p>
+    <div class="btn-publication">
+      <a href="https://ieeexplore.ieee.org/document/10850938" target="_blank" class="btn-cv">
+        <u>See Publication</u>
+      </a>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <h2>Tech Stack</h2>
+    <p>I rely on this tech stack to create robust and elegant solutions.</p>
+    <div class="skills-tabs">
+      <button class="tab-button active" data-category="all">All Skills</button>
+      <button class="tab-button" data-category="data-vis">Data Visualization</button>
+      <button class="tab-button" data-category="databases">Databases</button>
+      <button class="tab-button" data-category="programming">Programming</button>
+      <button class="tab-button" data-category="tools-dev">Tools & Development</button>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-card data-vis">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/powerbi.svg" alt="Power BI"
+          style="filter: invert(73%) sepia(59%) saturate(5232%) hue-rotate(356deg) brightness(95%) contrast(89%);">
+        <span>Power BI</span>
+        <small class="skill-type">BI Tool</small>
+      </div>
+      <div class="skill-card data-vis">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg" alt="Grafana">
+        <span>Grafana</span>
+        <small class="skill-type">Dashboard Tool</small>
+      </div>
+      <div class="skill-card data-vis">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tableau.svg" alt="Tableau"
+          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
+        <span>Tableau</span>
+        <small class="skill-type">BI Tool</small>
+      </div>
+      <div class="skill-card data-vis">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/microsoftexcel.svg" alt="Excel"
+          style="filter: invert(45%) sepia(95%) saturate(381%) hue-rotate(73deg) brightness(89%) contrast(91%);">
+        <span>Excel</span>
+        <small class="skill-type">Spreadsheet Tool</small>
+      </div>
+      <div class="skill-card databases">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
+        <span>MySQL</span>
+        <small class="skill-type">Database</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/figma.svg" alt="Figma"
+          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
+        <span>Figma</span>
+        <small class="skill-type">Design Tool</small>
+      </div>
+      <div class="skill-card databases">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+          alt="SQL Server">
+        <span>SQL Server</span>
+        <small class="skill-type">Database</small>
+      </div>
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R">
+        <span>R</span>
+        <small class="skill-type">Programming Language</small>
+      </div>
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+        <span>Python</span>
+        <small class="skill-type">Programming Language</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+        <span>VS Code</span>
+        <small class="skill-type">IDE</small>
+      </div>
+      <div class="skill-card databases">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" alt="SQL">
+        <span>SQL</span>
+        <small class="skill-type">Query Language</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Cloud Platforms">
+        <span>Cloud Platforms</span>
+        <small class="skill-type">Platform</small>
+      </div>
+      <div class="skill-card programming">
+        <img src="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" alt="Machine Learning">
+        <span>Machine Learning</span>
+        <small class="skill-type">Library</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/firebase.svg" alt="Firebase"
+          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
+        <span>Firebase</span>
+        <small class="skill-type">Backend Service</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn-icons-png.flaticon.com/512/2761/2761118.png" alt="ERP">
+        <span>ERP</span>
+        <small class="skill-type">System</small>
+      </div>
+      <div class="skill-card databases">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB">
+        <span>MongoDB</span>
+        <small class="skill-type">Database</small>
+      </div>
+      <div class="skill-card programming">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="IoT - Arduino">
+        <span>IoT</span>
+        <small class="skill-type">Technology</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+        <span>GitHub</span>
+        <small class="skill-type">Version Control</small>
+      </div>
+      <div class="skill-card tools-dev">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/postman.svg" alt="Postman"
+          style="filter: invert(48%) sepia(69%) saturate(2378%) hue-rotate(178deg) brightness(93%) contrast(88%);">
+        <span>Postman</span>
+        <small class="skill-type">API Tool</small>
+      </div>
+      <div class="skill-card">
+        <img src="https://raw.githubusercontent.com/SamHerbert/SVG-Loaders/master/svg-loaders/three-dots.svg"
+          alt="Learning More..." width="48" />
+        <span>More to Go...</span>
+        <small class="skill-type">Ongoing</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Updated Contact Section -->
+  <section id="contact" class="fade-in">
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-10">
+        <div class="card contact-card">
+          <div style="display: flex;justify-content: center;align-items: center;flex-direction: column;">
+            <h2>Get In Touch </h2>
+            <img src="paper.png" width="50px">
+          </div>
+
+          <div class="first-child p">
+            <p>I'm always interested in new opportunities. Whether you have a question or just want to say hi, I'll do
+              my best to get back to you!</p>
+          </div>
+          <div class="d-flex flex-column align-items-center">
+            <div>
+              <p><i class="fas fa-phone"></i> (+94) 77 1018 607</p>
+              <p><i class="fas fa-envelope"></i>
+                <a href="mailto:wuwani2001@gmail.com">wuwani2001@gmail.com</a>
+              </p>
+              <p><i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/wuwani-chathurya/"
+                  target="_blank">linkedin.com/in/wuwani-chathurya</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Wuwani Perera. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Navbar active on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('nav a.nav-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Fade-in sections on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    const aboutSection = document.querySelector('#profile');
+
+    function updateCount(counter) {
+      const target = +counter.getAttribute('data-target');
+      const speed = 200;
+      const inc = target / speed;
+      let count = 0;
+
+      const update = () => {
+        count += inc;
+        if (count < target) {
+          counter.innerText = Math.ceil(count);
+          setTimeout(update, 1);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    }
+
+    const aboutObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          counters.forEach(counter => {
+            counter.innerText = '0';
+            updateCount(counter);
+          });
+          aboutObserver.unobserve(aboutSection);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (aboutSection) {
+      aboutObserver.observe(aboutSection);
+    }
+
+    // Skills filtering
+    const tabs = document.querySelectorAll('.tab-button');
+    const cards = document.querySelectorAll('.skill-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const category = tab.dataset.category;
+        cards.forEach(card => {
+          if (category === 'all' || card.classList.contains(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Smooth scroll with navbar offset for nav links
+    document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('href').substring(1);
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            const navbarHeight = document.querySelector('nav').offsetHeight;
+            const targetPosition = targetSection.offsetTop - navbarHeight - 10;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
