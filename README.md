@@ -1,6 +1,6 @@
 # 🌐 Personal Portfolio Website
 
-This repository contains the source code for my **personal portfolio website**, built to showcase my projects, skills, and achievements. The portfolio is designed with a clean, modern layout and is fully responsive across devices.
+This repository contains the source code for my **personal portfolio website**, built to showcase my projects, skills, and achievements. The portfolio is designed with a clean, modern layout.
 
 ## 🚀 Features
 
